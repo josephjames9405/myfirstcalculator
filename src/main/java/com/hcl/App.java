@@ -22,6 +22,7 @@ public class App {
 	public static void main(String[] args) {
 		//Poor mans banner
 		System.out.println("Hello World! I am a great calculator :-) ;-) ");
+		System.out.println("Joseph");
 		
 		// creates an object of Scanner
 	    Scanner input = new Scanner(System.in);
