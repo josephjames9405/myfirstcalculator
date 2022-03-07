@@ -20,30 +20,64 @@ import java.util.Scanner;
  */
 public class App {
 	public static void main(String[] args) {
-		//Poor mans banner
-		System.out.println("Hello World! I am a great calculator :-) ;-) ");
-		System.out.println("Joseph");
-		
+		// Poor mans banner
+		System.out.println("-------BASIC CALCULATOR------- ");
+
 		// creates an object of Scanner
-	    Scanner input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
+		char ch, choice;
+		int p;
 
-	    System.out.print("Enter first number: ");
+		/*
+		 * System.out.print("Enter first number: ");
+		 * 
+		 * // takes 1st number int firstNumber = input.nextInt();
+		 * 
+		 * // prints the name System.out.println("Enter second number: ");
+		 * 
+		 * // takes 2st number int secondNumber = input.nextInt();
+		 * 
+		 * // operation add only int sum = firstNumber + secondNumber;
+		 * 
+		 * System.out.printf("Sum of %d and %d = %d", firstNumber, secondNumber, sum);
+		 */
+		do {
+			System.out.print("OPERATIONS\n\n*:Multiplication\n/:Division\n+:Addition\n-:Subtraction");
+			System.out.print("\nEnter your choice:");
+			ch = input.next().charAt(0);
+			System.out.print("Enter first number:");
+			int firstNumber = input.nextInt();
+			System.out.print("Enter second number:");
+			int secondNumber = input.nextInt();
 
-	    // takes 1st number
-	    int firstNumber = input.nextInt();
+			switch (ch) {
+			case '*':
+				p = firstNumber * secondNumber;
+				System.out.print("Product=" + p);
+				break;
+			case '/':
+				p = firstNumber / secondNumber;
+				System.out.print("Quotient=" + p);
+				break;
+			case '+':
+				p = firstNumber + secondNumber;
+				System.out.print("Sum=" + p);
+				break;
+			case '-':
+				p = firstNumber - secondNumber;
+				System.out.print("Difference=" + p);
+				break;
+			default:
+				System.out.print("Invalid Entry");
+				break;
 
-	    // prints the name
-	    System.out.println("Enter second number: ");
-	    
-	    // takes 2st number
-	    int secondNumber = input.nextInt();
-	    
-	    //operation add only
-	    int sum = firstNumber + secondNumber;
-	    
-	    System.out.printf("Sum of %d and %d = %d", firstNumber, secondNumber, sum);
+			}
+			System.out.print("\nDo you want to continue(y/n)=");
+			choice = input.next().charAt(0);
+			;
+		} while (choice == 'y');
 
-	    // closes the scanner
-	    input.close();
+		// closes the scanner
+		input.close();
 	}
 }
